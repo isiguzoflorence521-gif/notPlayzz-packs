@@ -2,7 +2,7 @@
 The official home for notPlayzz texture packs, hosted on GitHub Pages.
 
 ## 🔗 Live Site
-[View the notPlayzz Website](https://yourusername.github.io)
+[View the notPlayzz Website](https://isiguzoflorence521-gif.github.io/texture-packs/)
 
 ## 🚀 About the Project
 This website is a gallery and download hub for high-performance Bloxd.io texture packs. 
