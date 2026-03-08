@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>notPlayzz | Bloxdman Style</title>
+    <title>notPlayzz | Bloxd.io Texture Packs</title>
+    <!-- Link to your Neon CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -13,26 +14,37 @@
 
     <header>
         <h1>Texture Packs</h1>
+        <p>Adding 10 textures every day!</p>
     </header>
 
     <main>
-        <!-- Repeat this block for each pack -->
+        <!-- notPlayzz 9K 8x Pack Row -->
         <div class="pack-row">
-            <span class="pack-name">notPlayzz 9K 8x (246 Files)</span>
-            <a href="https://github.com" class="download-btn">Download</a>
+            <div class="pack-info">
+                <span class="pack-name">notPlayzz 9K 8x</span>
+                <span class="pack-stats">214 Files • 8x8 Performance</span>
+            </div>
+            <!-- Raw link for direct loading into Bloxd settings -->
+            <button class="download-btn" onclick="copyRawLink()">Copy Link</button>
         </div>
-        
-        <div class="pack-row">
-            <span class="pack-name">Classic 8x Edition</span>
-            <a href="#" class="download-btn">Download</a>
-        </div>
+
+        <!-- Add more rows here as you make more packs -->
     </main>
 
     <footer>
         <p>© notPlayzz 2024</p>
         <div class="socials">
-            <a href="#">Discord</a> | <a href="#">YouTube</a>
+            <a href="https://github.com">GitHub</a>
         </div>
     </footer>
+
+    <script>
+        function copyRawLink() {
+            const rawUrl = "https://raw.githubusercontent.com";
+            navigator.clipboard.writeText(rawUrl);
+            alert("Bloxd link copied! Paste it into 'Custom' settings in-game.");
+        }
+    </script>
 </body>
 </html>
+
