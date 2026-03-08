@@ -3,31 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>notPlayzz | 8x Texture Packs</title>
+    <title>notPlayzz | Bloxdman Style</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <nav>
+        <div class="logo">notPlayzz</div>
+    </nav>
+
     <header>
-        <h1>notPlayzz 9K 8x</h1>
-        <p>Current Progress: <strong>246 Files</strong> (+10 Added Today!)</p>
-        <button class="copy-btn" onclick="copyPackLink()">Copy Bloxd.io Link</button>
+        <h1>Texture Packs</h1>
     </header>
 
-    <main id="gallery">
-        <!-- Manually add your best textures here -->
-        <div class="texture-card">
-            <img src="packs/notPlayzz-9K-8x/textures/grass_block_top.png" loading="lazy" alt="Grass Block">
-            <p>grass_block_top.png</p>
+    <main>
+        <!-- Repeat this block for each pack -->
+        <div class="pack-row">
+            <span class="pack-name">notPlayzz 9K 8x (246 Files)</span>
+            <a href="https://github.com" class="download-btn">Download</a>
         </div>
-        <!-- Add more cards as you finish them -->
+        
+        <div class="pack-row">
+            <span class="pack-name">Classic 8x Edition</span>
+            <a href="#" class="download-btn">Download</a>
+        </div>
     </main>
 
-    <script>
-        function copyPackLink() {
-            const link = "https://raw.githubusercontent.com";
-            navigator.clipboard.writeText(link);
-            alert("Bloxd link copied!");
-        }
-    </script>
+    <footer>
+        <p>© notPlayzz 2024</p>
+        <div class="socials">
+            <a href="#">Discord</a> | <a href="#">YouTube</a>
+        </div>
+    </footer>
 </body>
 </html>
