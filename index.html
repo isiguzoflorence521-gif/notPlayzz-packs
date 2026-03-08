@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>notPlayzz | 8x Texture Packs</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>notPlayzz 9K 8x</h1>
+        <p>Current Progress: <strong>246 Files</strong> (+10 Added Today!)</p>
+        <button class="copy-btn" onclick="copyPackLink()">Copy Bloxd.io Link</button>
+    </header>
+
+    <main id="gallery">
+        <!-- Manually add your best textures here -->
+        <div class="texture-card">
+            <img src="packs/notPlayzz-9K-8x/textures/grass_block_top.png" loading="lazy" alt="Grass Block">
+            <p>grass_block_top.png</p>
+        </div>
+        <!-- Add more cards as you finish them -->
+    </main>
+
+    <script>
+        function copyPackLink() {
+            const link = "https://raw.githubusercontent.com";
+            navigator.clipboard.writeText(link);
+            alert("Bloxd link copied!");
+        }
+    </script>
+</body>
+</html>
