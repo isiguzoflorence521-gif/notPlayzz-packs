@@ -1,87 +1,67 @@
-/* Neon Theme for notPlayzz */
 body {
-    background-color: #050505; /* Pure black for maximum neon contrast */
-    color: #e0e0e0;
-    font-family: 'Inter', 'Segoe UI', sans-serif;
+    background-color: #0a0a0a;
+    color: #fff;
+    font-family: 'Arial', sans-serif;
     margin: 0;
-    padding: 40px 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    text-align: center;
+}
+
+nav {
+    padding: 20px;
+    border-bottom: 2px solid #00ffcc; /* Neon Cyan line */
+    box-shadow: 0 0 15px #00ffcc;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #00ffcc;
+    text-shadow: 0 0 10px #00ffcc;
 }
 
 header h1 {
-    color: #00ffcc; /* Neon Cyan */
-    text-transform: uppercase;
-    letter-spacing: 4px;
-    text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc;
-    margin-bottom: 5px;
+    margin: 40px 0;
+    font-size: 2.5rem;
+    text-shadow: 0 0 20px #ff00ff; /* Neon Pink glow */
 }
 
-header p {
-    color: #ff00ff; /* Neon Pink */
-    font-weight: bold;
-    text-shadow: 0 0 8px #ff00ff;
-}
-
-/* Glowing Copy Button */
-.copy-btn {
-    background: transparent;
-    color: #00ffcc;
-    border: 2px solid #00ffcc;
-    padding: 15px 30px;
-    font-size: 1rem;
-    font-weight: 900;
-    text-transform: uppercase;
-    cursor: pointer;
-    border-radius: 50px;
-    box-shadow: 0 0 15px rgba(0, 255, 204, 0.4);
-    transition: 0.3s ease-in-out;
-}
-
-.copy-btn:hover {
-    background: #00ffcc;
-    color: #000;
-    box-shadow: 0 0 30px #00ffcc;
-    transform: scale(1.05);
-}
-
-/* Texture Gallery Grid */
-#gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-    gap: 20px;
-    width: 100%;
-    max-width: 1100px;
-    margin-top: 50px;
-}
-
-/* Neon Texture Cards */
-.texture-card {
+/* Bloxdman-style list rows */
+.pack-row {
     background: #111;
-    padding: 15px;
-    border-radius: 12px;
-    text-align: center;
+    margin: 10px auto;
+    padding: 20px;
+    width: 80%;
+    max-width: 600px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 8px;
     border: 1px solid #333;
     transition: 0.3s;
 }
 
-.texture-card:hover {
-    border-color: #ff00ff;
-    box-shadow: 0 0 20px rgba(255, 0, 255, 0.3);
-    transform: translateY(-5px);
+.pack-row:hover {
+    border-color: #00ffcc;
+    box-shadow: 0 0 15px rgba(0, 255, 204, 0.2);
 }
 
-.texture-card img {
-    width: 80px; 
-    height: 80px;
-    image-rendering: pixelated; /* Keeps your 8x8 textures sharp! */
-    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.2));
+.pack-name {
+    font-size: 1.2rem;
+    font-weight: bold;
 }
 
-.texture-card p {
-    font-size: 11px;
-    color: #666;
-    margin-top: 10px;
-    font-family: monospace;
+.download-btn {
+    background-color: #00ffcc;
+    color: #000;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    box-shadow: 0 0 10px #00ffcc;
+}
+
+.download-btn:hover {
+    background-color: #ff00ff;
+    box-shadow: 0 0 20px #ff00ff;
+    color: #fff;
 }
