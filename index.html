@@ -3,196 +3,157 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>notPlayzz | Bloxd.io Texture Packs</title>
+    <title>notPlayzz | 9K Texture Hub</title>
     <style>
-        /* NEON BLOXDMAN STYLE */
+        /* BASE STYLES */
         body {
-            /* Website background using your specific asset path */
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), 
                         url('assets/backgrounds/Survival 2.png');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
-            image-rendering: pixelated; /* Keeps your 8x background sharp */
+            image-rendering: pixelated; 
             color: #ffffff;
-            font-family: 'Inter', 'Segoe UI', sans-serif;
+            font-family: 'Inter', sans-serif;
             margin: 0;
             display: flex;
             flex-direction: column;
             align-items: center;
             min-height: 100vh;
+            overflow-x: hidden; /* Prevents side-scrolling */
         }
 
-        nav {
-            width: 100%;
-            padding: 20px 0;
-            background: rgba(0, 0, 0, 0.9);
-            border-bottom: 2px solid #00ffcc;
-            box-shadow: 0 0 15px #00ffcc;
-            text-align: center;
+        nav { width: 100%; padding: 20px 0; background: rgba(0, 0, 0, 0.9); border-bottom: 2px solid #00ffcc; text-align: center; }
+        .logo { font-size: 1.8rem; font-weight: 900; color: #00ffcc; text-transform: uppercase; text-shadow: 0 0 10px #00ffcc; }
+
+        header { text-align: center; padding: 40px 20px; }
+        header h1 { font-size: clamp(2rem, 8vw, 4rem); text-transform: uppercase; color: #ff00ff; text-shadow: 0 0 20px #ff00ff; margin: 0; }
+        header p { color: #00ffcc; font-weight: bold; margin-top: 10px; }
+
+        /* MAIN CONTAINER */
+        main { 
+            width: 95%; 
+            max-width: 900px; 
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            padding-bottom: 50px;
         }
 
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 900;
-            color: #00ffcc;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            text-shadow: 0 0 10px #00ffcc;
-        }
-
-        header h1 {
-            margin: 60px 0 10px;
-            font-size: 3.5rem;
-            text-transform: uppercase;
-            color: #ff00ff; /* Neon Pink */
-            text-shadow: 0 0 20px #ff00ff;
-        }
-
-        header p {
-            color: #00ffcc;
-            font-weight: bold;
-            margin-bottom: 40px;
-        }
-
-        main {
-            width: 90%;
-            max-width: 800px;
-        }
-
-        /* Bloxdman-style list rows */
+        /* PACK ROWS - FIXED SQUEEZING */
         .pack-row {
             background: rgba(15, 15, 15, 0.95);
-            margin-bottom: 15px;
             padding: 25px;
             display: flex;
+            flex-wrap: wrap; /* Allows buttons to drop to next line on small screens */
             justify-content: space-between;
             align-items: center;
+            border-radius: 15px;
+            border: 1px solid #333;
+            gap: 20px; /* Space between text and buttons */
+        }
+
+        .pack-info { flex: 1; min-width: 250px; } /* Ensures text doesn't get crushed */
+        .pack-name { display: block; font-size: 1.6rem; font-weight: bold; margin-bottom: 5px; }
+        .pack-stats { color: #00ffcc; font-size: 0.9rem; font-weight: bold; text-transform: uppercase; }
+
+        /* BUTTONS */
+        .btn-group { display: flex; gap: 10px; flex-wrap: wrap; }
+        .btn { 
+            padding: 12px 24px; 
+            border-radius: 8px; 
+            font-weight: bold; 
+            text-decoration: none; 
+            cursor: pointer; 
+            transition: 0.3s; 
+            border: none;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+        }
+        .download-btn { background: #00ffcc; color: #000; box-shadow: 0 0 10px #00ffcc; }
+        .copy-btn { background: transparent; color: #ff00ff; border: 2px solid #ff00ff; }
+        .darkfall-btn { background: #6a0dad; color: #fff; opacity: 0.7; cursor: not-allowed; }
+
+        /* GALLERY GRID */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            gap: 15px;
+            margin-top: 30px;
+        }
+        .gallery-card {
+            background: #111;
+            padding: 20px;
             border-radius: 12px;
+            text-align: center;
             border: 1px solid #333;
             transition: 0.3s;
         }
-
-        .pack-row:hover {
-            border-color: #ff00ff;
-            box-shadow: 0 0 20px rgba(255, 0, 255, 0.3);
-            transform: scale(1.01);
-        }
-
-        .pack-info { text-align: left; }
-        .pack-name { display: block; font-size: 1.4rem; font-weight: bold; color: #fff; }
-        .pack-stats { font-size: 0.9rem; color: #00ffcc; }
-
-        .btn-group { display: flex; gap: 10px; }
-
-        .btn {
-            padding: 12px 20px;
-            border-radius: 5px;
-            font-weight: bold;
-            text-transform: uppercase;
-            text-decoration: none;
-            cursor: pointer;
-            transition: 0.3s;
-            font-size: 0.85rem;
-        }
-
-        /* Neon Download Button */
-        .download-btn {
-            background: #00ffcc;
-            color: #000;
-            border: none;
-            box-shadow: 0 0 10px #00ffcc;
-        }
-
-        /* Neon Copy Button */
-        .copy-btn {
-            background: transparent;
-            color: #ff00ff;
-            border: 2px solid #ff00ff;
-            box-shadow: 0 0 10px rgba(255, 0, 255, 0.2);
-        }
-
-        .btn:hover { transform: scale(1.05); filter: brightness(1.2); }
-
-        footer {
-            margin-top: auto;
-            padding: 40px;
-            color: #444;
-            font-size: 0.8rem;
-        }
+        .gallery-card:hover { border-color: #ff00ff; transform: translateY(-5px); }
+        .gallery-card img { width: 64px; height: 64px; image-rendering: pixelated; filter: drop-shadow(0 0 5px #ff00ff); }
     </style>
 </head>
 <body>
+
     <nav><div class="logo">notPlayzz</div></nav>
 
     <header>
         <h1>Texture Packs</h1>
-        <p>Progress: 246+ Textures & Daily Updates!</p>
+        <p>220+ Textures | Updating Daily</p>
     </header>
 
     <main>
-        <!-- notPlayzz 9K 8x Pack Row -->
-        <div class="pack-row">
+        <!-- 9K 8x MAIN PACK -->
+        <div class="pack-row" style="border-color: #00ffcc;">
             <div class="pack-info">
                 <span class="pack-name">notPlayzz 9K 8x</span>
-                <span class="pack-stats">246 Files • 8x8 Performance</span>
+                <span class="pack-stats">Status: On Progress (220 Files)</span>
             </div>
-            
             <div class="btn-group">
-                <!-- DOWNLOAD: Uses your confirmed DownGit link for the specific folder -->
-                <a href="https://downgit.github.io/#/home?url=https://github.com/isiguzoflorence521-gif/texture-packs/tree/main/packs/notPlayzz-9K-8x" 
-                   class="btn download-btn" target="_blank">Download Pack</a>
-
-                <!-- SECOND PACK: BLUE EDITION -->
-<div class="pack-row" style="border-color: #0088ff;">
-    <div class="pack-info">
-        <span class="pack-name">notPlayzz 8x Blue Edition</span>
-        <span class="pack-stats">Coming Soon • Neon Blue Aesthetic</span>
-    </div>
-    
-    <div class="btn-group">
-        <button class="btn" style="background: #0088ff; color: #fff; border:none;">Pre-order (Free)</button>
-        <button class="btn copy-btn" style="color: #0088ff; border-color: #0088ff;">View Preview</button>
-
-        <!-- NEW PACK: DARKFALL 9K -->
-<div class="pack-row" style="border-color: #6a0dad; background: rgba(106, 13, 173, 0.05);">
-    <div class="pack-info">
-        <span style="font-size: 1.4rem; font-weight: bold; color: #fff;">Darkfall 9K</span><br>
-        <span style="color: #6a0dad; font-size: 0.85rem; font-weight: bold; text-transform: uppercase; letter-spacing: 1px;">
-            Status: 🌑 Coming Soon
-        </span>
-    </div>
-    
-    <div class="btn-group">
-        <!-- Disabled button for "Coming Soon" status -->
-        <button class="btn" style="background: #6a0dad; color: #fff; border:none; opacity: 0.8; cursor: not-allowed;">
-            NOT RELEASED
-        </button>
-        <!-- Optional: Link to a preview image if you have one -->
-        <button class="btn copy-btn" style="color: #6a0dad; border-color: #6a0dad;">Preview</button>
-    </div>
-</div>
-
-    </div>
-</div>
-
-
-                <!-- COPY: Raw URL for direct loading in Bloxd settings -->
+                <a href="https://downgit.github.io/#/home?url=https://github.com/isiguzoflorence521-gif/notPlayzz-packs/tree/main/packs/notPlayzz-9K-8x" class="btn download-btn">Download</a>
                 <button class="btn copy-btn" onclick="copyRawLink()">Copy Link</button>
             </div>
         </div>
-    </main>
 
-    <footer>
-        <p>© 2024 notPlayzz • Created for Bloxd.io</p>
-    </footer>
+        <!-- BLUE EDITION -->
+        <div class="pack-row" style="border-color: #0088ff;">
+            <div class="pack-info">
+                <span class="pack-name">Blue Edition 8x</span>
+                <span class="pack-stats" style="color: #0088ff;">Status: In Progress</span>
+            </div>
+            <div class="btn-group">
+                <button class="btn" style="background: #0088ff; color: #fff;">Coming Soon</button>
+            </div>
+        </div>
+
+        <!-- DARKFALL 9K -->
+        <div class="pack-row" style="border-color: #6a0dad;">
+            <div class="pack-info">
+                <span class="pack-name">Darkfall 9K</span>
+                <span class="pack-stats" style="color: #6a0dad;">Status: 🌑 Coming Soon</span>
+            </div>
+            <div class="btn-group">
+                <button class="btn darkfall-btn">Not Released</button>
+            </div>
+        </div>
+
+        <!-- RECENT TEXTURES GALLERY -->
+        <h2 style="color: #ff00ff; margin-top: 40px; text-transform: uppercase;">Latest 6 Textures</h2>
+        <div class="gallery-grid">
+            <div class="gallery-card"><img src="packs/notPlayzz-9K-8x/textures/NEW_1.png"><p>New #1</p></div>
+            <div class="gallery-card"><img src="packs/notPlayzz-9K-8x/textures/NEW_2.png"><p>New #2</p></div>
+            <div class="gallery-card"><img src="packs/notPlayzz-9K-8x/textures/NEW_3.png"><p>New #3</p></div>
+            <div class="gallery-card"><img src="packs/notPlayzz-9K-8x/textures/NEW_4.png"><p>New #4</p></div>
+            <div class="gallery-card"><img src="packs/notPlayzz-9K-8x/textures/NEW_5.png"><p>New #5</p></div>
+            <div class="gallery-card"><img src="packs/notPlayzz-9K-8x/textures/NEW_6.png"><p>New #6</p></div>
+        </div>
+    </main>
 
     <script>
         function copyRawLink() {
-            // Raw URL for your specific repository to use in Bloxd settings
             const rawUrl = "https://raw.githubusercontent.com";
             navigator.clipboard.writeText(rawUrl);
-            alert("Bloxd link copied! Paste it into 'Custom' settings in-game.");
+            alert("Bloxd URL Copied!");
         }
     </script>
 </body>
